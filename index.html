@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bulb {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #555;
+      position: relative;
+      transition: box-shadow 0.4s, background-color 0.2s;
+    }
+
+    .bulb:hover {
+      background-color: yellow;
+      box-shadow: 0 0 5px yellow,
+                  0 0 15px yellow,
+                  0 0 40px yellow,
+                  0 0 65px yellow;
+    }
+
+    .bulb::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%, 10px);
+      background-color: #555;
+      width: 50px;
+      height: 27px;
+      border-top: 25px solid #222;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      transition: background-color 0.2s;
+    }
+
+    .bulb:hover::after {
+      background-color: yellow;
+    }
+
+    .string {
+      width: 5px;
+      height: 500px;
+      background-color: #222;
+      position: absolute;
+      width: 5px;
+      height: 500px;
+      background-color: #222;
+      position: absolute;
+      transform: translateX(-50%);
+      bottom: 138%;
+      left: 50%;
+    }
+
+    .wrap {
+      position: relative;
+    }
+
+    .sv {
+      width: 190px;
+      height: 363px;
+      background-image: url(red2.png);
+      background-repeat: no-repeat;
+    }
+    .sv:hover {
+      background-image: url(green2.png);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="string"></div>
+    <div class="bulb"></div>
+    
+    <div class="sv"></div>
+  </div>
+</body>
+
+</html>
